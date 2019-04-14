@@ -72,7 +72,6 @@ router.put('/games', function (req, res) {
 });
 
 router.delete('/games', function (req, res) {
-    console.log(req.body);
     if (!req.body.ObjectId)
         return res.status(400).send({ msg: "Need an ObjectId" });
     Games.remove({ _id: ObjectId(req.body.ObjectId) },
